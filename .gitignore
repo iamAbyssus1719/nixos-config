@@ -1,0 +1,14 @@
+result
+result-*
+*.qcow2
+*.iso
+.env
+.env.*
+secrets/
+secrets.nix
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*.swp
+*~
