@@ -2,7 +2,10 @@
 
 {
   imports = [
-    ./modules/hyprland.nix
+    ./modules/wezterm.nix
+    ./modules/zsh.nix
+    ./modules/fastfetch.nix
+    ./modules/starship.nix
   ];
 
   home.username = "abyssus1719";
