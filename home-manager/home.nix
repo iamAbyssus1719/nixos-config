@@ -6,6 +6,7 @@
     ./modules/zsh.nix
     ./modules/fastfetch.nix
     ./modules/starship.nix
+    ./modules/quickshell.nix
   ];
 
   home.username = "abyssus1719";

@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -15,6 +14,7 @@
     # Desktop
     ./modules/desktop/hyprland.nix
     ./modules/desktop/noctalia.nix
+    ./modules/desktop/sddm.nix
 
     # Programs
     ./modules/programs/vscode.nix
@@ -38,6 +38,9 @@
     layout = "us";
     variant = "";
   };
+
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   # Audio
   services.pipewire = {
@@ -93,6 +96,9 @@
     xdg-utils
     bibata-cursors
     tree
+    papirus-icon-theme
+    nwg-look
+    brightnessctl
   ];
 
   # Fonts
