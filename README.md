@@ -12,35 +12,55 @@
 
 ```
 .
-├── configuration.nix
-├── hardware-configuration.nix
+├── flake.lock
+├── flake.nix
 ├── home-manager
-│   ├── home.nix
-│   └── modules
-│       ├── fastfetch.nix
-│       ├── quickshell.nix
-│       ├── starship.nix
-│       ├── wezterm.nix
-│       └── zsh.nix
+│   ├── configs
+│   │   ├── hyprland
+│   │   │   ├── hyprland.lua
+│   │   │   └── scripts
+│   │   │       ├── captura.sh
+│   │   │       ├── Flotantes.sh
+│   │   │       └── Opacidad.sh
+│   │   └── noctalia
+│   │       ├── assets
+│   │       │   ├── HORIZONTAL.jpg
+│   │       │   ├── VERTICAL.jpg
+│   │       │   └── YUKI.jpg
+│   │       └── settings.nix
+│   ├── home.nix
+│   └── modules
+│       ├── fastfetch.nix
+│       ├── hyprland.nix
+│       ├── noctalia.nix
+│       ├── quickshell.nix
+│       ├── starship.nix
+│       ├── wezterm.nix
+│       └── zsh.nix
+├── hosts
+│   ├── configuration.nix
+│   └── hardware-configuration.nix
 ├── modules
-│   ├── desktop
-│   │   ├── hyprland.nix
-│   │   ├── noctalia.nix
-│   │   └── sddm.nix
-│   ├── programs
-│   │   └── vscode.nix
-│   └── system
-│       ├── audio.nix
-│       └── bluetooth.nix
+│   ├── desktop
+│   │   ├── hyprland.nix
+│   │   ├── noctalia.nix
+│   │   └── sddm.nix
+│   ├── programs
+│   │   └── vscode.nix
+│   ├── services
+│   │   └── server.nix
+│   └── system
+│       ├── audio.nix
+│       └── bluetooth.nix
 ├── quickshell
-│   ├── Captura
-│   │   └── shell.qml
-│   ├── lock
-│   │   └── shell.qml
-│   ├── Menu
-│   │   └── shell.qml
-│   └── Reloj
-│       └── shell.qml
+│   ├── Captura
+│   │   └── shell.qml
+│   ├── lock
+│   │   └── shell.qml
+│   ├── Menu
+│   │   └── shell.qml
+│   └── Reloj
+│       └── shell.qml
 └── README.md
 ```
 
