@@ -18,6 +18,9 @@
 
     # Programs
     ./modules/programs/vscode.nix
+
+    # Services
+    ./modules/services/server.nix
   ];
 
   # Bootloader
@@ -53,6 +56,10 @@
     enable = true;
     enable32Bit = true;
   };
+
+  # USB
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   # XDG
   xdg.autostart.enable = true;
@@ -99,6 +106,9 @@
     papirus-icon-theme
     nwg-look
     brightnessctl
+    unzip
+    jq
+    usbutils
   ];
 
   # Fonts
