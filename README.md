@@ -38,8 +38,9 @@
 │       ├── wezterm.nix
 │       └── zsh.nix
 ├── hosts
-│   ├── configuration.nix
-│   └── hardware-configuration.nix
+│   └── nixos
+│       ├── configuration.nix
+│       └── hardware-configuration.nix
 ├── modules
 │   ├── desktop
 │   │   ├── hyprland.nix
