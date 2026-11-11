@@ -6,19 +6,19 @@
     ./hardware-configuration.nix
 
     # System
-    ../modules/system/audio.nix
-    ../modules/system/bluetooth.nix
+    ../../modules/system/audio.nix
+    ../../modules/system/bluetooth.nix
 
     # Desktop
-    ../modules/desktop/hyprland.nix
-    ../modules/desktop/noctalia.nix
-    ../modules/desktop/sddm.nix
+    ../../modules/desktop/hyprland.nix
+    ../../modules/desktop/noctalia.nix
+    ../../modules/desktop/sddm.nix
 
     # Programs
-    ../modules/programs/vscode.nix
+    ../../modules/programs/vscode.nix
 
     # Services
-    ../modules/services/server.nix
+    ../../modules/services/server.nix
   ];
 
   # Bootloader
@@ -74,15 +74,6 @@
 
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
-
-  # Home Manager
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-
-    backupFileExtension = "backup";
-    users.abyssus1719 = import ../home-manager/home.nix;
-  };
 
   # Packages
   nixpkgs.config.allowUnfree = true;
