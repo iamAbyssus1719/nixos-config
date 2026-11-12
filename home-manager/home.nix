@@ -2,13 +2,22 @@
 
 {
   imports = [
-    ./modules/wezterm.nix
-    ./modules/zsh.nix
-    ./modules/fastfetch.nix
-    ./modules/starship.nix
-    ./modules/quickshell.nix
-    ./modules/hyprland.nix
-    ./modules/noctalia.nix
+
+    # desktop
+    ./modules/desktop/hyprland.nix
+    ./modules/desktop/noctalia.nix
+    ./modules/desktop/quickshell.nix
+
+    # programs
+    ./modules/programs/fastfetch.nix
+
+    # shell
+    ./modules/shell/starship.nix
+    ./modules/shell/zsh.nix
+
+    # terminal
+    ./modules/terminal/wezterm.nix
+
   ];
 
   home.username = "abyssus1719";

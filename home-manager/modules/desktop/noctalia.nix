@@ -2,7 +2,7 @@
 { pkgs, ... }:
 
 let
-  noctaliaSettings = import ../configs/noctalia/settings.nix;
+  noctaliaSettings = import ../../configs/noctalia/settings.nix;
 in
 {
   xdg.configFile."noctalia/config.toml".source =
@@ -11,7 +11,7 @@ in
       noctaliaSettings;
 
   xdg.configFile."noctalia/assets" = {
-    source = ../configs/noctalia/assets;
+    source = ../../configs/noctalia/assets;
     recursive = true;
   };
 }
