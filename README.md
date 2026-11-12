@@ -3,138 +3,247 @@
 
   # NixOS System Configuration
 
-  A modular and reproducible NixOS configuration utilizing Home Manager for user-environment management.
+  A modular and reproducible NixOS configuration using Flakes and Home Manager to manage system and user environments.
 </div>
 
 ---
 
 ## Project Structure
 
-```
+```text
 .
 ├── flake.lock
 ├── flake.nix
 ├── home-manager
-│   ├── configs
-│   │   ├── hyprland
-│   │   │   ├── hyprland.lua
-│   │   │   └── scripts
-│   │   │       ├── captura.sh
-│   │   │       ├── Flotantes.sh
-│   │   │       └── Opacidad.sh
-│   │   ├── noctalia
-│   │   │   ├── assets
-│   │   │   │   ├── HORIZONTAL.jpg
-│   │   │   │   ├── VERTICAL.jpg
-│   │   │   │   └── YUKI.jpg
-│   │   │   └── settings.nix
-│   │   └── quickshell
-│   │       ├── Captura
-│   │       │   └── shell.qml
-│   │       ├── lock
-│   │       │   └── shell.qml
-│   │       ├── Menu
-│   │       │   └── shell.qml
-│   │       └── Reloj
-│   │           └── shell.qml
-│   ├── home.nix
-│   └── modules
-│       ├── desktop
-│       │   ├── hyprland.nix
-│       │   ├── noctalia.nix
-│       │   └── quickshell.nix
-│       ├── programs
-│       │   └── fastfetch.nix
-│       ├── shell
-│       │   ├── starship.nix
-│       │   └── zsh.nix
-│       └── terminal
-│           └── wezterm.nix
+│   ├── configs
+│   │   ├── hyprland
+│   │   │   ├── hyprland.lua
+│   │   │   └── scripts
+│   │   │       ├── captura.sh
+│   │   │       ├── Flotantes.sh
+│   │   │       └── Opacidad.sh
+│   │   ├── noctalia
+│   │   │   ├── assets
+│   │   │   │   ├── HORIZONTAL.jpg
+│   │   │   │   ├── VERTICAL.jpg
+│   │   │   │   └── YUKI.jpg
+│   │   │   └── settings.nix
+│   │   └── quickshell
+│   │       ├── Captura
+│   │       │   └── shell.qml
+│   │       ├── lock
+│   │       │   └── shell.qml
+│   │       ├── Menu
+│   │       │   └── shell.qml
+│   │       └── Reloj
+│   │           └── shell.qml
+│   ├── home.nix
+│   └── modules
+│       ├── desktop
+│       │   ├── hyprland.nix
+│       │   ├── noctalia.nix
+│       │   └── quickshell.nix
+│       ├── programs
+│       │   ├── fastfetch.nix
+│       │   ├── vscode.nix
+│       │   └── vscode-settings.nix
+│       ├── shell
+│       │   ├── starship.nix
+│       │   └── zsh.nix
+│       └── terminal
+│           └── wezterm.nix
 ├── hosts
-│   └── nixos
-│       ├── configuration.nix
-│       └── hardware-configuration.nix
+│   └── nixos
+│       ├── configuration.nix
+│       └── hardware-configuration.nix
 ├── modules
-│   ├── desktop
-│   │   ├── hyprland.nix
-│   │   ├── noctalia.nix
-│   │   └── sddm.nix
-│   ├── programs
-│   │   └── vscode.nix
-│   ├── services
-│   │   └── server.nix
-│   └── system
-│       ├── audio.nix
-│       └── bluetooth.nix
+│   ├── desktop
+│   │   ├── hyprland.nix
+│   │   ├── noctalia.nix
+│   │   └── sddm.nix
+│   ├── services
+│   │   └── server.nix
+│   └── system
+│       ├── audio.nix
+│       └── bluetooth.nix
 └── README.md
 ```
 
-### Component Overview
+## Component Overview
 
-* **`configuration.nix`**: Primary system entrypoint.
-* **`hardware-configuration.nix`**: Machine-specific hardware definitions (automatically generated).
-* **`home-manager/`**: User-space configurations and dotfiles management.
-* **`modules/`**: Modular system-level configurations categorized by desktop environment, applications, and core system services.
-* **`quickshell/`**: Custom QML-based shell interfaces and widgets.
+### System Configuration
+
+- **`flake.nix`**: Main entry point for the Flake. Defines dependencies and combines NixOS and Home Manager configurations.
+- **`flake.lock`**: Locks dependency versions to ensure reproducible builds.
+- **`hosts/nixos/`**: Host-specific configuration, including the main NixOS configuration and hardware definitions.
+- **`modules/`**: System-level modules for desktop components, services, audio and Bluetooth.
+
+### Home Manager
+
+- **`home-manager/home.nix`**: Main entry point for the user configuration.
+- **`home-manager/modules/`**: User-level modules organized by category.
+- **`home-manager/configs/`**: Custom application configurations, scripts, assets and QML files.
+
+Home Manager manages user applications, shell environments, editor settings and configuration files independently from the system-level modules.
 
 ## Core Components
 
-* **Window Manager:** Hyprland
-* **Display Manager:** SDDM
-* **Desktop Tools:** Noctalia, UWSM
-* **Custom Widgets:** Quickshell (captures, lockscreen, menu, clock)
-* **Terminal Environment:** WezTerm, Zsh, Starship, Fastfetch
-* **Configuration Management:** Home Manager
+| Category | Components |
+|---|---|
+| Operating System | NixOS 26.05 |
+| Window Manager | Hyprland |
+| Display Manager | SDDM |
+| Desktop Tools | Noctalia, UWSM |
+| Custom Widgets | QuickShell |
+| Terminal | WezTerm |
+| Shell | Zsh, Starship |
+| System Information | Fastfetch |
+| Code Editor | Visual Studio Code |
+| Configuration Management | Nix Flakes, Home Manager |
+| Web Development | Apache, PHP, MariaDB, Node.js, Composer |
+
+## Architecture
+
+The configuration follows a modular structure that separates system-level and user-level responsibilities.
+
+### NixOS Modules
+
+Located in `modules/`, these modules manage system-wide configuration:
+
+- System services and daemons.
+- Audio and Bluetooth.
+- Display manager.
+- System-level desktop configuration.
+- Server environment.
+
+### Home Manager Modules
+
+Located in `home-manager/modules/`, these modules manage the user environment:
+
+- Application installation and extensions.
+- Application settings.
+- Terminal and shell configuration.
+- Hyprland user configuration.
+- Noctalia and QuickShell configurations.
+- Custom scripts and assets.
+
+This separation makes the configuration easier to maintain, reuse and extend.
 
 ## Deployment and Installation
 
 ### Prerequisites
 
-* NixOS 26.05
-* Git
-* Home Manager (release-26.05 channel)
+- NixOS 26.05.
+- Git.
+- Nix with Flakes enabled.
 
-### 1. Repository Setup
+Home Manager is integrated as a NixOS module through the Flake, so it does not need to be installed separately through a traditional channel.
 
-NixOS reads configuration files directly from `/etc/nixos`.
+### 1. Enable Flakes
 
-Backup the existing system configuration:
+Ensure that experimental features are enabled in your NixOS configuration:
+
+```nix
+nix.settings.experimental-features = [
+  "nix-command"
+  "flakes"
+];
+```
+
+### 2. Clone the Repository
+
+Back up your existing configuration:
 
 ```bash
 sudo cp -r /etc/nixos /etc/nixos.backup
 ```
 
-Clone this repository into `/etc/nixos`:
+Clone the repository:
 
 ```bash
 sudo git clone https://github.com/iamAbyssus1719/nixos-config.git /etc/nixos
 ```
 
-> **Note:** Update the repository URL to match your personal target repository.
+If `/etc/nixos` already contains a Git repository, use a separate directory or back up and move the existing configuration before cloning.
 
-### 2. Hardware Configuration
+### 3. Hardware Configuration
 
-The `hardware-configuration.nix` file contains settings tailored to specific physical hardware.
+The `hardware-configuration.nix` file contains hardware-specific settings generated for the machine.
 
-When deploying to a new host, generate a clean hardware profile:
+When deploying to another host, generate its hardware configuration:
 
 ```bash
 sudo nixos-generate-config
 ```
 
-Ensure the generated `hardware-configuration.nix` is retained for the active machine.
+Keep the generated `hardware-configuration.nix` for the target machine. Do not blindly reuse another computer's hardware configuration.
 
-### 3. Build and Switch
+### 4. Build and Switch
 
-To compile and activate the configuration:
+Check the Flake configuration:
 
 ```bash
-sudo nixos-rebuild switch
+nix flake check /etc/nixos
 ```
 
-## Architectural Notes
+Build the system without activating it:
 
-* **Path Conventions:** Default path evaluation relies on `/etc/nixos/configuration.nix`. Maintain this path or configure a corresponding symbolic link.
-* **Hardware Isolation:** Avoid sharing `hardware-configuration.nix` across different machines to prevent partitioning or driver conflicts.
-* **Flakes Usage:** This deployment uses traditional Nix channels and Home Manager modules (non-Flake setup).
-* **Rollback Capabilities:** NixOS creates system generations upon build, enabling instant rollbacks via the bootloader or `nixos-rebuild --rollback` if regressions occur.
+```bash
+sudo nixos-rebuild dry-build --flake /etc/nixos#nixos
+```
+
+Apply the configuration:
+
+```bash
+sudo nixos-rebuild switch --flake /etc/nixos#nixos
+```
+
+## Updating Dependencies
+
+Update the dependencies defined in `flake.nix`:
+
+```bash
+nix flake update /etc/nixos
+```
+
+Then rebuild the system:
+
+```bash
+sudo nixos-rebuild switch --flake /etc/nixos#nixos
+```
+
+## Git Workflow
+
+The configuration is maintained in a Git repository.
+
+Because Flakes evaluate Git-tracked files, newly created configuration files must be added to Git before Nix can use them:
+
+```bash
+git add .
+```
+
+Check the current repository status:
+
+```bash
+git status
+```
+
+A commit is not required before rebuilding. Staging the files is sufficient.
+
+## Rollback
+
+NixOS creates system generations when a new configuration is activated.
+
+To return to the previous generation:
+
+```bash
+sudo nixos-rebuild switch --rollback
+```
+
+You can also select a previous generation from the bootloader menu.
+
+---
+
+## License
+
+This repository is intended for personal use and as a reference for my NixOS configuration.

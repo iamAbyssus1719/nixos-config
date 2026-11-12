@@ -10,6 +10,8 @@
 
     # programs
     ./modules/programs/fastfetch.nix
+    ./modules/programs/vscode.nix
+    ./modules/programs/vscode-settings.nix
 
     # shell
     ./modules/shell/starship.nix

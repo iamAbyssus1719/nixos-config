@@ -14,9 +14,6 @@
     ../../modules/desktop/noctalia.nix
     ../../modules/desktop/sddm.nix
 
-    # Programs
-    ../../modules/programs/vscode.nix
-
     # Services
     ../../modules/services/server.nix
   ];
@@ -99,6 +96,7 @@
     jq
     usbutils
     gh
+    nodejs
   ];
 
   # Fonts

@@ -1,6 +1,19 @@
 
 { pkgs, ... }:
 
+let
+  php = pkgs.php84.withExtensions ({ enabled, all }:
+    enabled ++ (with all; [
+      mysqli
+      pdo_mysql
+      zip
+      gd
+      curl
+      mbstring
+      intl
+    ])
+  );
+in
 {
   # Apache HTTP Server
   services.httpd = {
@@ -8,7 +21,11 @@
     enablePHP = true;
 
     adminAddr = "admin@localhost";
-    phpPackage = pkgs.php;
+    phpPackage = php;
+
+    extraModules = [
+      "rewrite"
+    ];
 
     virtualHosts.localhost = {
       documentRoot = "/var/www";
@@ -21,25 +38,18 @@
       '';
     };
   };
+
   # MariaDB (compatible con MySQL)
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
   };
 
-  # PHP y herramientas de desarrollo
-  environment.systemPackages = with pkgs; [
+  # PHP y Composer
+  environment.systemPackages = [
     php
-    php84Packages.composer
-    phpExtensions.mysqli
-    phpExtensions.pdo_mysql
-    phpExtensions.zip
-    phpExtensions.gd
-    phpExtensions.curl
-    phpExtensions.mbstring
-    phpExtensions.xml
-    phpExtensions.intl
-    phpExtensions.openssl
+    php.packages.composer
+    pkgs.nodejs
   ];
 
   # Puertos HTTP y HTTPS
