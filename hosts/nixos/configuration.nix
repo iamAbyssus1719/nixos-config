@@ -16,6 +16,13 @@
 
     # Services
     ../../modules/services/server.nix
+
+    # Programs
+    ../../modules/programs/development.nix
+    ../../modules/programs/terminal.nix
+    ../../modules/programs/aplications.nix
+    ../../modules/programs/customization.nix
+    ../../modules/programs/utilities.nix
   ];
 
   # Bootloader
@@ -33,7 +40,7 @@
   i18n.defaultLocale = "es_MX.UTF-8";
 
   services.xserver.xkb = {
-    layout = "us";
+    layout = "es";
     variant = "";
   };
 
@@ -66,6 +73,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "dialout"
     ];
   };
 
@@ -74,30 +82,6 @@
 
   # Packages
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    kitty
-    wezterm
-    fastfetch
-    firefox
-    nautilus
-    pavucontrol
-    wl-clipboard
-    xdg-user-dirs
-    xdg-utils
-    bibata-cursors
-    tree
-    papirus-icon-theme
-    nwg-look
-    brightnessctl
-    unzip
-    jq
-    usbutils
-    gh
-    nodejs
-  ];
 
   # Fonts
   fonts.packages = with pkgs; [

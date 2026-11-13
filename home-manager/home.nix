@@ -7,11 +7,14 @@
     ./modules/desktop/hyprland.nix
     ./modules/desktop/noctalia.nix
     ./modules/desktop/quickshell.nix
+    ./modules/desktop/google-fonts.nix
 
     # programs
     ./modules/programs/fastfetch.nix
     ./modules/programs/vscode.nix
     ./modules/programs/vscode-settings.nix
+    ./modules/programs/laravel.nix
+    ./modules/programs/esp32.nix
 
     # shell
     ./modules/shell/starship.nix
