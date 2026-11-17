@@ -33,6 +33,8 @@ in
         vue.volar
         bradlc.vscode-tailwindcss
         dbaeumer.vscode-eslint
+        mhutchie.git-graph
+        eamodio.gitlens
       ];
     })
   ];

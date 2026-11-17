@@ -21,6 +21,7 @@
       ];
 
       font_family = "Inconsolata ExtraBold";
+      margin_ends = 300;
 
       radius = 0;
       radius_bottom_left = 80;
@@ -36,6 +37,7 @@
         "spacer_7"
         "button"
         "bar"
+        "launcher"
       ];
 
       thickness = 40;
@@ -72,15 +74,15 @@
     cross_axis_padding = 0;
     enabled = true;
     icon_size = 32;
-
     main_axis_padding = 0;
 
     pinned = [
-      "org.gnome.Nautilus"
-      "org.mozilla.firefox"
-      "com.microsoft.VSCode"
+      "firefox"
+      "code"
       "org.wezfurlong.wezterm"
-      "libreoffice-writer"
+      "com.obsproject.Studio"
+      "discord"
+      "osu!"
     ];
 
     reserve_space = false;
@@ -94,25 +96,594 @@
   };
 
   lockscreen_widgets = {
-    enabled = false;
+    enabled = true;
     schema_version = 2;
-    widget_order = [];
+
+    widget_order = [
+      "lockscreen-widget-0000000000000008"
+      "lockscreen-widget-0000000000000001"
+      "lockscreen-login-box@DP-2"
+      "lockscreen-login-box@HDMI-A-1"
+      "lockscreen-login-box@eDP-1"
+      "lockscreen-widget-0000000000000002"
+      "lockscreen-widget-0000000000000003"
+      "lockscreen-widget-0000000000000004"
+      "lockscreen-widget-0000000000000005"
+      "lockscreen-widget-0000000000000006"
+      "lockscreen-widget-0000000000000007"
+      "lockscreen-widget-0000000000000009"
+      "lockscreen-widget-000000000000000a"
+      "lockscreen-widget-000000000000000b"
+      "lockscreen-widget-000000000000000c"
+      "lockscreen-widget-000000000000000d"
+      "lockscreen-widget-000000000000000e"
+      "lockscreen-widget-000000000000000f"
+      "lockscreen-widget-0000000000000010"
+      "lockscreen-widget-0000000000000011"
+      "lockscreen-widget-0000000000000012"
+      "lockscreen-widget-0000000000000013"
+      "lockscreen-widget-0000000000000014"
+      "lockscreen-widget-0000000000000015"
+      "lockscreen-widget-0000000000000016"
+      "lockscreen-widget-0000000000000017"
+      "lockscreen-widget-0000000000000018"
+    ];
 
     grid = {
       cell_size = 16;
       major_interval = 4;
       visible = true;
     };
+
+    widget = {
+      "lockscreen-login-box@DP-2" = {
+        box_height = 196.0;
+        box_width = 810.0;
+        cx = 519.0;
+        cy = 1330.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "login_box";
+
+        settings = {
+          background_color = "surface_variant";
+          background_opacity = 0.88;
+          background_radius = 12.0;
+          center_password_text = false;
+          input_opacity = 1.0;
+          input_radius = 6.0;
+          layout = "regular";
+          show_caps_lock = true;
+          show_keyboard_layout = true;
+          show_login_button = true;
+          show_media = true;
+          show_session_buttons = true;
+          show_unlock_hint = true;
+          show_weather = true;
+        };
+      };
+
+      "lockscreen-login-box@HDMI-A-1" = {
+        box_height = 196.0;
+        box_width = 810.0;
+        cx = 960.0;
+        cy = 906.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "login_box";
+
+        settings = {
+          background_color = "surface_variant";
+          background_opacity = 0.88;
+          background_radius = 12.0;
+          center_password_text = false;
+          input_opacity = 1.0;
+          input_radius = 6.0;
+          layout = "regular";
+          show_caps_lock = true;
+          show_keyboard_layout = true;
+          show_login_button = true;
+          show_media = true;
+          show_session_buttons = true;
+          show_unlock_hint = true;
+          show_weather = true;
+        };
+      };
+
+      "lockscreen-login-box@eDP-1" = {
+        box_height = 196.0;
+        box_width = 810.0;
+        cx = 960.0;
+        cy = 898.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "login_box";
+
+        settings = {
+          background_color = "surface_variant";
+          background_opacity = 0.88;
+          background_radius = 12.0;
+          center_password_text = false;
+          input_opacity = 1.0;
+          input_radius = 6.0;
+          layout = "regular";
+          show_caps_lock = true;
+          show_keyboard_layout = true;
+          show_login_button = true;
+          show_media = true;
+          show_session_buttons = true;
+          show_unlock_hint = true;
+          show_weather = true;
+        };
+      };
+
+      "lockscreen-widget-0000000000000001" = {
+        box_height = 384.0;
+        box_width = 624.0;
+        cx = 960.0;
+        cy = 492.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 1.0;
+          background_padding = 13;
+          background_radius = 32;
+          center_text = false;
+          clock_style = "digital";
+          font_family = "Inconsolata ExtraBold";
+          format = "";
+          shadow = true;
+        };
+      };
+
+      "lockscreen-widget-0000000000000002" = {
+        box_height = 256.0;
+        box_width = 464.0;
+        cx = 960.0;
+        cy = 422.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-0000000000000003" = {
+        box_height = 144.0;
+        box_width = 224.0;
+        cx = 944.0;
+        cy = 516.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+          color = "on_surface_variant";
+          format = "{:%a, %b %d}";
+        };
+      };
+
+      "lockscreen-widget-0000000000000004" = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 764.0;
+        cy = 596.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "weather";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-0000000000000005" = {
+        box_height = 112.0;
+        box_width = 224.0;
+        cx = 1136.0;
+        cy = 596.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "volume";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-0000000000000006" = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 916.0;
+        cy = 596.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "sysmon";
+
+        settings = {
+          background_opacity = 0.0;
+          stat = "cpu_usage";
+          stat2 = "cpu_temp";
+        };
+      };
+
+      "lockscreen-widget-0000000000000007" = {
+        box_height = 144.0;
+        box_width = 576.0;
+        cx = 960.0;
+        cy = 188.0;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+          color = "on_hover";
+          format = "L o c k e d";
+        };
+      };
+
+      "lockscreen-widget-0000000000000008" = {
+        box_height = 384.0;
+        box_width = 624.0;
+        cx = 960.0;
+        cy = 476.0;
+        flip_x = true;
+        output = "HDMI-A-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = -0.2617993950843811;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.86;
+          background_padding = 13;
+          background_radius = 32;
+          center_text = false;
+          clock_style = "digital";
+          font_family = "Inconsolata ExtraBold";
+          format = "";
+          shadow = true;
+        };
+      };
+
+      "lockscreen-widget-0000000000000009" = {
+        box_height = 384.0;
+        box_width = 624.0;
+        cx = 524.0;
+        cy = 920.0;
+        flip_x = true;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = -0.2617993950843811;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.86;
+          background_padding = 13;
+          background_radius = 32;
+          center_text = false;
+          clock_style = "digital";
+          font_family = "Inconsolata ExtraBold";
+          format = "";
+          shadow = true;
+        };
+      };
+
+      "lockscreen-widget-000000000000000a" = {
+        box_height = 384.0;
+        box_width = 624.0;
+        cx = 524.0;
+        cy = 936.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 1.0;
+          background_padding = 13;
+          background_radius = 32;
+          center_text = false;
+          clock_style = "digital";
+          font_family = "Inconsolata ExtraBold";
+          format = "";
+          shadow = true;
+        };
+      };
+
+      "lockscreen-widget-000000000000000b" = {
+        box_height = 256.0;
+        box_width = 464.0;
+        cx = 524.0;
+        cy = 866.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-000000000000000c" = {
+        box_height = 144.0;
+        box_width = 224.0;
+        cx = 508.0;
+        cy = 960.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+          color = "on_surface_variant";
+          format = "{:%a, %b %d}";
+        };
+      };
+
+      "lockscreen-widget-000000000000000d" = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 328.0;
+        cy = 1040.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "weather";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-000000000000000e" = {
+        box_height = 112.0;
+        box_width = 224.0;
+        cx = 700.0;
+        cy = 1040.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "volume";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-000000000000000f" = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 480.0;
+        cy = 1040.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "sysmon";
+
+        settings = {
+          background_opacity = 0.0;
+          stat = "cpu_usage";
+          stat2 = "cpu_temp";
+        };
+      };
+
+      "lockscreen-widget-0000000000000010" = {
+        box_height = 384.0;
+        box_width = 624.0;
+        cx = 944.0;
+        cy = 516.0;
+        flip_x = true;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = -0.2617993950843811;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.86;
+          background_padding = 13;
+          background_radius = 32;
+          center_text = false;
+          clock_style = "digital";
+          font_family = "Inconsolata ExtraBold";
+          format = "";
+          shadow = true;
+        };
+      };
+
+      "lockscreen-widget-0000000000000011" = {
+        box_height = 384.0;
+        box_width = 624.0;
+        cx = 944.0;
+        cy = 532.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 1.0;
+          background_padding = 13;
+          background_radius = 32;
+          center_text = false;
+          clock_style = "digital";
+          font_family = "Inconsolata ExtraBold";
+          format = "";
+          shadow = true;
+        };
+      };
+
+      "lockscreen-widget-0000000000000012" = {
+        box_height = 256.0;
+        box_width = 464.0;
+        cx = 944.0;
+        cy = 462.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-0000000000000013" = {
+        box_height = 144.0;
+        box_width = 224.0;
+        cx = 928.0;
+        cy = 556.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+          color = "on_surface_variant";
+          format = "{:%a, %b %d}";
+        };
+      };
+
+      "lockscreen-widget-0000000000000014" = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 748.0;
+        cy = 636.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "weather";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-0000000000000015" = {
+        box_height = 112.0;
+        box_width = 224.0;
+        cx = 1120.0;
+        cy = 636.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "volume";
+
+        settings = {
+          background_opacity = 0.0;
+        };
+      };
+
+      "lockscreen-widget-0000000000000016" = {
+        box_height = 0.0;
+        box_width = 0.0;
+        cx = 900.0;
+        cy = 636.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "sysmon";
+
+        settings = {
+          background_opacity = 0.0;
+          stat = "cpu_usage";
+          stat2 = "cpu_temp";
+        };
+      };
+
+      "lockscreen-widget-0000000000000017" = {
+        box_height = 144.0;
+        box_width = 576.0;
+        cx = 944.0;
+        cy = 212.0;
+        output = "eDP-1";
+        placement_height = 1080.0;
+        placement_width = 1920.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+          color = "on_hover";
+          format = "L o c k e d";
+        };
+      };
+
+      "lockscreen-widget-0000000000000018" = {
+        box_height = 144.0;
+        box_width = 576.0;
+        cx = 540.0;
+        cy = 616.0;
+        output = "DP-2";
+        placement_height = 1920.0;
+        placement_width = 1080.0;
+        rotation = 0.0;
+        type = "clock";
+
+        settings = {
+          background_opacity = 0.0;
+          color = "on_hover";
+          format = "L o c k e d";
+        };
+      };
+    };
   };
 
   plugins = {
-    enabled = [];
+    enabled = [
+      "frai3mega/battery-graph"
+      "yocraft/desktop-launcher"
+    ];
   };
 
   shell = {
     avatar_path = "/home/abyssus1719/.config/noctalia/assets/YUKI.jpg";
     font_family = "Inconsolata ExtraBold";
     password_style = "random";
+    settings_show_advanced = false;
     settings_window_translucent = true;
 
     launcher = {
@@ -122,9 +693,10 @@
     };
 
     panel = {
-      launcher_placement = "attached";
+      launcher_placement = "floating";
+      launcher_position = "bottom_center";
       open_near_click_control_center = true;
-      open_near_click_launcher = true;
+      open_near_click_launcher = false;
       open_near_click_session = true;
     };
 
@@ -148,7 +720,7 @@
     };
 
     last = {
-      path = "/home/abyssus1719/.config/noctalia/assets/HORIZONTAL.jpg";
+      path = "/home/abyssus1719/.config/noctalia/assets/VERTICAL.jpg";
     };
 
     monitors = {

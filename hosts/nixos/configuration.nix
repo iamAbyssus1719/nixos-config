@@ -12,7 +12,7 @@
     # Desktop
     ../../modules/desktop/hyprland.nix
     ../../modules/desktop/noctalia.nix
-    ../../modules/desktop/sddm.nix
+    ../../modules/desktop/sddm/sddm.nix
 
     # Services
     ../../modules/services/server.nix
@@ -23,6 +23,9 @@
     ../../modules/programs/aplications.nix
     ../../modules/programs/customization.nix
     ../../modules/programs/utilities.nix
+    ../../modules/programs/osu-lazer.nix
+    ../../modules/programs/obs.nix
+    ../../modules/programs/nautilus.nix
   ];
 
   # Bootloader
@@ -43,6 +46,9 @@
     layout = "es";
     variant = "";
   };
+
+  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver.blacklistedKernelModules = [ "wacom" "hid-uclogic" ];
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;

@@ -15,6 +15,8 @@
     ./modules/programs/vscode-settings.nix
     ./modules/programs/laravel.nix
     ./modules/programs/esp32.nix
+    ./modules/programs/discord.nix
+    ./modules/programs/libreoffice.nix
 
     # shell
     ./modules/shell/starship.nix
@@ -22,7 +24,6 @@
 
     # terminal
     ./modules/terminal/wezterm.nix
-
   ];
 
   home.username = "abyssus1719";

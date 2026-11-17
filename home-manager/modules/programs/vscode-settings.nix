@@ -20,6 +20,7 @@
       "workbench.sideBar.location" = "right";
       "security.workspace.trust.untrustedFiles" = "open";
       "explorer.compactFolders" = false;
+      "editor.wordWrap" = "on";
 
       # Copilot
       "github.copilot.enable" = {

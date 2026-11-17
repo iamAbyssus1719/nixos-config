@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
   environment.systemPackages = with pkgs; [
     wl-clipboard
     xdg-user-dirs
@@ -11,5 +17,6 @@
     usbutils
     grim
     slurp
+    distrobox
   ];
 }
