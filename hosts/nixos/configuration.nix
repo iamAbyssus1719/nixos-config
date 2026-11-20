@@ -16,6 +16,7 @@
 
     # Services
     ../../modules/services/server.nix
+    ../../modules/services/postgresql.nix
 
     # Programs
     ../../modules/programs/development.nix
@@ -26,6 +27,7 @@
     ../../modules/programs/osu-lazer.nix
     ../../modules/programs/obs.nix
     ../../modules/programs/nautilus.nix
+    ../../modules/programs/razer.nix
   ];
 
   # Bootloader
@@ -52,6 +54,10 @@
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
+
+  # OpenRazer
+  hardware.openrazer.enable = true;
+  hardware.openrazer.users = ["abyssus1719"];
 
   # Audio
   services.pipewire = {
@@ -96,4 +102,5 @@
 
   # State version
   system.stateVersion = "26.05";
+
 }

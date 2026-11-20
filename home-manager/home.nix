@@ -16,7 +16,7 @@
     ./modules/programs/laravel.nix
     ./modules/programs/esp32.nix
     ./modules/programs/discord.nix
-    ./modules/programs/libreoffice.nix
+    ./modules/programs/onlyoffice.nix
 
     # shell
     ./modules/shell/starship.nix

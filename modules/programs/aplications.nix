@@ -6,5 +6,6 @@
     loupe
     pavucontrol
     nautilus
+    dbeaver-bin
   ];
 }

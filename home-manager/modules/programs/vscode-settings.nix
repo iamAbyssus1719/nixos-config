@@ -15,6 +15,8 @@
       "editor.quickSuggestions" = {
         "strings" = "on";
       };
+      "editor.formatOnSave" = true;
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
 
       # Interfaz
       "workbench.sideBar.location" = "right";
